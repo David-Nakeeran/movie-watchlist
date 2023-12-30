@@ -3,7 +3,7 @@
 const watchContainer = document.getElementById('watch-container');
 
 
-let addedToWatchlist = JSON.parse(localStorage.getItem('watchlist'));
+let addedToWatchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
 
 if(addedToWatchlist.length === 0) {
     renderEmptyWatchlist();
