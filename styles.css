@@ -5,7 +5,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #1c1c1c;
+    background-color: #121212;
     font-family: 'Inter', sans-serif;
 }
 
@@ -18,14 +18,71 @@ header {
 
 nav {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 42px;
+    height: 210px;
 }
 
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
 
+/* typography */
+h1 {
+    font-size: 2.625rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+nav > p {
+    font-size: 0.875rem;
+    font-weight: 700;
+    
+}
+
+.film-title {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.film-rating {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.film-typography {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0 20px 0 0;
+}
+
+.film-plot {
+    color: #a5a5a5;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+header,
+section,
+main {
+    min-width: 370px;
+}
+
+/* form */
 form {
     display: flex;
     justify-content: center;
     position: absolute;
-    top: 50px;
+    top: 192px;
     width: 100vw;
 }
 
@@ -33,25 +90,22 @@ form {
     display: flex;
     justify-content: center;
     position: relative;
-    width: 50%;
 } 
 
 input {
-    padding: 9px 13px 9px 30px;
-    width: 90%;
+    padding: 9px 13px 9px 35px;
     border: none;
     border-bottom-left-radius: 4px;
     border-top-left-radius: 4px;
     color: #a5a5a5;
     background-color: #2e2e2f;
+    min-width: 150px;
 
 }
 
-
-
 .input-container > i{
     width: 20px;
-    margin: 9px 8px;
+    margin: 9px 3px;
     position: relative;
     left: 30px;
     color: #ffffff;
@@ -64,11 +118,13 @@ button {
     color: #ffffff;
     font-weight: 500;
     border: none;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
 }
 
+/* main body */
 .container {
-    background-color: #121212;
-    height: 100vh;
+    padding-top: 50px;
 }
 
 .start-exploring {
@@ -76,16 +132,148 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 70vh;
     color: #2e2e2f;
     font-size: 18px;
     font-weight: 700;
+    width: 320px;
+    margin: 0 auto;
 }
 
 .start-exploring p {
     margin-top: 10px;
 }
 
-/* img {
+
+/* film container */
+.film-container {
+    display: flex;
+    min-width: 300px;
+    margin: 0 auto;
+    border-bottom: 1px solid #2c2c2c;
+    padding: 20px 20px 20px 20px;
+}
+
+.img-container {
+    display: flex;
+    margin-right: 21px;
+}
+
+.film-poster {
+    width: 100px;
+}
+
+.film-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.film-title-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    align-items: center;
+
+}
+.rating-star {
+    margin: 0 4px;
+
+}
+
+.film-info {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+i {
+    cursor: pointer;
+    align-self: left;
+    margin-right: 5px;
+}
+
+.fa-solid {
+    color: #fff;
+}
+
+.watchlist-text {
+    display: none;
+}
+
+img {
     align-self: center;
-} */
+}
+
+
+
+/* my watchlist page */
+.watchlist-empty-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.watchlist-heading,
+.watchlist-para {
+    color: #fff;
+}
+
+.watchlist-heading {
+    font-size: 42px;
+    font-weight: 800;
+}
+
+.watchlist-para {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.empty-watchlist-para {
+    text-align: center;
+}
+
+.watchlist-small-para {
+    padding-left: 10px;
+}
+
+
+/* media queries */
+@media (min-width: 480px) {
+    nav {
+        flex-direction: row;
+        justify-content: space-between;
+        
+    }
+
+    h1 {
+        margin-bottom: 34.860px;
+    }
+
+    .input-container {
+        width: 80%;
+    }
+
+    input {
+        width: 80%;
+    }
+
+    .film-container {
+        max-width: 550px;
+        padding: 20px 0 20px 0;
+    }
+
+    .film-info {
+        flex-wrap: nowrap;
+    }
+
+    i {
+        align-self: center;
+    }
+
+    .watchlist-text {
+        display: block;
+    }
+
+    .img-container {
+        display: block;
+    }
+}
