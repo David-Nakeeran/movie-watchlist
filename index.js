@@ -63,13 +63,13 @@ searchForm.addEventListener('submit', (e) => {
 
 // fetches data from api and pushes to movie array calls renderFilm function
 async function getFilmDetails() {
-    const response = await fetch(`http://www.omdbapi.com/?apikey=2ec4c37c&s=${inputField.value}&type=movie`);
+    const response = await fetch(`https://www.omdbapi.com/?apikey=2ec4c37c&s=${inputField.value}&type=movie`);
     const data = await response.json();
 
     const filmId = getImdbID(data.Search);
 
     for(const item of filmId) {
-        const response2 = await fetch(`http://www.omdbapi.com/?apikey=2ec4c37c&i=${item}`);
+        const response2 = await fetch(`https://www.omdbapi.com/?apikey=2ec4c37c&i=${item}`);
         const data2 = await response2.json();
         moviesArr.push(data2)
     };
